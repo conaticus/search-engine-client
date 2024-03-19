@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #252525;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+input {
+    border-radius: 10px;
+    border: solid 1px #cdcdcd;
+    outline: none;
+    width: 50vw;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: #303030;
+}
+
+input::placeholder {
+    color: #6c6c6c;
+}
