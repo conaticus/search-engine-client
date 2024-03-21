@@ -4,4 +4,4 @@ This is the client side application for my second attempt at a search engine. It
 
 This runs in conjunction with the other two repositories:
 - [Crawler](https://github.com/conaticus/search-engine-client)
-- [API](http://url.here](https://github.com/conaticus/search-engine-api)https://github.com/conaticus/search-engine-api)
+- [API](https://github.com/conaticus/search-engine-api)
