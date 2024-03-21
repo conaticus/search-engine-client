@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 15px;
+    padding: 25px;
     box-sizing: border-box;
     background-color: #252525;
     color: white;
@@ -21,4 +21,13 @@ input {
 
 input::placeholder {
     color: #6c6c6c;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(78, 119, 255);
+}
+
+a:visited {
+    color: rgb(161, 56, 161);
 }

@@ -1,9 +1,15 @@
 import { useState } from "react";
 import Input from "./ui/Input";
 
+interface Website {
+    url: string;
+    title: string;
+    description: string;
+}
+
 interface QueryResult {
     executionSeconds?: number;
-    results: string[];
+    results: Website[];
 }
 
 function App() {
@@ -13,6 +19,8 @@ function App() {
     });
 
     async function sendQuery() {
+        if (input.length == 0) return;
+
         const res = await fetch("/api/query", {
             method: "POST",
             body: JSON.stringify({
@@ -43,12 +51,44 @@ function App() {
                 </p>
             )}
 
-            <div>
+            <div style={{ width: "30vw" }}>
                 {queryResult.results.map((result, idx) => (
-                    <div style={{ marginBottom: "10px", fontSize: "25px" }}>
-                        <a key={idx} href={result}>
-                            {result}
+                    <div
+                        style={{
+                            marginBottom: "20px",
+                            fontSize: "25px",
+                        }}
+                    >
+                        <a
+                            style={{
+                                textOverflow: "ellipsis",
+                                overflow: "hidden",
+                                whiteSpace: "nowrap",
+                                width: "100%",
+                                display: "block",
+                                marginBottom: "5px",
+                            }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={idx}
+                            href={result.url}
+                        >
+                            {result.title}
                         </a>
+                        <p
+                            style={{
+                                fontSize: "15px",
+                                color: "#d1d1d1",
+                                display: "-webkit-box",
+                                lineClamp: 2,
+                                WebkitBoxOrient: "vertical",
+                                WebkitLineClamp: 2,
+                                overflow: "hidden",
+                                margin: 0,
+                            }}
+                        >
+                            {result.description}
+                        </p>
                     </div>
                 ))}
             </div>
