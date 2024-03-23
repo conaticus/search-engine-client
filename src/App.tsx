@@ -51,7 +51,7 @@ function App() {
                 </p>
             )}
 
-            <div style={{ width: "30vw" }}>
+            <div style={{ width: "80vw" }}>
                 {queryResult.results.map((result, idx) => (
                     <div
                         style={{
